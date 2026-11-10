@@ -1,8 +1,3 @@
-// =====================================
-// TACTIX - FOOTBALL TACTICS BOARD
-// =====================================
-
-// 1. GET HTML ELEMENTS
 
 const pitch = document.getElementById("pitch");
 const playersContainer = document.getElementById("players");
@@ -14,8 +9,6 @@ const drawingLayer = document.getElementById("drawingLayer");
 const notesInput = document.getElementById("notes");
 
 
-// 2. PLAYER FORMATIONS
-// Each player has a position represented by x and y percentages.
 
 const formations = {
     "4-3-3": [
@@ -58,7 +51,6 @@ const formations = {
 };
 
 
-// 3. CREATE PLAYER ELEMENTS
 
 function createPlayers() {
 
@@ -91,12 +83,9 @@ function createPlayers() {
 }
 
 
-// 4. CHANGE FORMATION
 
 formationSelect.addEventListener("change", createPlayers);
 
-
-// 5. UPDATE TEAM NAME
 
 teamInput.addEventListener("input", function() {
 
@@ -106,7 +95,7 @@ teamInput.addEventListener("input", function() {
 });
 
 
-// 6. SELECT DRAWING TOOL
+
 
 let currentTool = "move";
 
@@ -136,7 +125,7 @@ toolButtons.forEach(button => {
 });
 
 
-// 7. DRAG AND DROP PLAYERS
+
 
 let selectedPlayer = null;
 
@@ -164,7 +153,6 @@ pitch.addEventListener("pointermove", function(event) {
     let x = ((event.clientX - rect.left) / rect.width) * 100;
     let y = ((event.clientY - rect.top) / rect.height) * 100;
 
-    // Keep players inside the pitch.
 
     x = Math.max(4, Math.min(96, x));
     y = Math.max(4, Math.min(96, y));
@@ -186,7 +174,6 @@ pitch.addEventListener("pointercancel", function() {
 });
 
 
-// 8. DRAW PASSING ARROWS
 
 let drawing = false;
 let startX = 0;
@@ -232,7 +219,6 @@ pitch.addEventListener("pointerup", function(event) {
 });
 
 
-// 9. SAVE TACTICS
 
 document.getElementById("saveBtn").addEventListener("click", function() {
 
@@ -264,7 +250,7 @@ document.getElementById("saveBtn").addEventListener("click", function() {
 });
 
 
-// 10. RESET BOARD
+
 
 document.getElementById("resetBtn").addEventListener("click", function() {
 
@@ -287,7 +273,7 @@ document.getElementById("resetBtn").addEventListener("click", function() {
 });
 
 
-// 11. LOAD SAVED TACTICS
+
 
 function loadTactics() {
 
