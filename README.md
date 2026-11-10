@@ -1,4 +1,4 @@
-# ⚽ TacBoard
+# TacBoard
 
 ### Plan. Visualize. Play.
 
