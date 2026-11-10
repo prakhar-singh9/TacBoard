@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TacBoard | Football Tactics Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="logo">TacBoard</div>
+        <div class="topbar-right">
+            <span>Football Strategy Planner</span>
+            <button id="saveBtn">Save Tactics</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <aside class="sidebar">
+            <h2>Team Setup</h2>
+
+            <label>Team Name</label>
+            <input type="text" id="teamName" value="My Football Team">
+
+            <label>Formation</label>
+            <select id="formation">
+                <option value="4-3-3">4-3-3</option>
+                <option value="4-4-2">4-4-2</option>
+                <option value="4-2-3-1">4-2-3-1</option>
+                <option value="3-5-2">3-5-2</option>
+            </select>
+
+            <h2>Drawing Tools</h2>
+            <button class="tool active" data-tool="move">↖ Move Players</button>
+            <button class="tool" data-tool="arrow">➜ Draw Arrow</button>
+            <button class="tool" data-tool="clear">✕ Clear Arrows</button>
+
+            <h2>Strategy Notes</h2>
+            <textarea id="notes" placeholder="Write your tactical instructions..."></textarea>
+
+            <button id="resetBtn" class="reset-btn">Reset Board</button>
+        </aside>
+
+        <section class="workspace">
+            <div class="workspace-header">
+                <div>
+                    <h2 id="displayTeam">My Football Team</h2>
+                    <p>TACTICAL FORMATION BOARD</p>
+                </div>
+                <span id="formationLabel">4-3-3</span>
+            </div>
+
+            <div class="pitch-wrapper">
+                <div id="pitch">
+                    <div class="halfway"></div>
+                    <div class="center-circle"></div>
+                    <div class="center-dot"></div>
+                    <div class="penalty-box top-box"></div>
+                    <div class="penalty-box bottom-box"></div>
+                    <div class="goal top-goal"></div>
+                    <div class="goal bottom-goal"></div>
+                    <div class="players" id="players"></div>
+                    <svg id="drawingLayer"></svg>
+                </div>
+            </div>
+
+            <div class="bottom-bar">
+                <span>11 Players</span>
+                <span>Drag players to reposition them</span>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
